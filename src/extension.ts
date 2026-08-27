@@ -23,7 +23,25 @@ export function activate(context: vscode.ExtensionContext) {
                 let childProcess = spawn("osascript", [scriptPath, "cd", `"${dirPath}"`]);
 
             });
-        } else {
+        } else if (process.platform === 'win32') {
+
+                fs.stat(e.fsPath, (err, stats) => {
+                    if (err) return;
+
+                    let dirPath = e.fsPath;
+
+                    if (stats.isFile()) {
+                        dirPath = path.dirname(dirPath);
+                    }
+
+                    // Windows Terminal
+                    spawn("wt.exe", ["-d", dirPath], {
+                        detached: true,
+                        stdio: 'ignore'
+                    }).unref();
+                });
+
+            }else {
             vscode.commands.executeCommand("workbench.action.terminal.openNativeConsole", e);
         }
     });
