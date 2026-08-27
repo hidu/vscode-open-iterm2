@@ -21,14 +21,19 @@ jobs:
         with:
           node-version: 22
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.4.0"
+
       - name: Install
-        run: npm install
+        run: bun install
 
       - name: Compile
-        run: npm run compile
+        run: bun run compile
 
       - name: Package VSIX
-        run: npx @vscode/vsce package
+        run: bun run package
 
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -36,4 +41,4 @@ jobs:
           tag_name: build-${{ github.run_number }}
           name: Build ${{ github.run_number }}
           prerelease: true
-          files: '*.vsix'
+          files: "*.vsix"

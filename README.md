@@ -1,3 +1,5 @@
-# Open iTerm2 For VSCode
+# Our Terminal For VSCode
 
-![open_iterm2](https://raw.githubusercontent.com/mushanshitiancai/vscode-open-iterm2/master/res/img1.png)
+![Our Terminal](https://raw.githubusercontent.com/hidu/vscode-our-terminal/master/res/img1.png)
+
+forked from https://github.com/mushanshitiancai/vscode-open-iterm2

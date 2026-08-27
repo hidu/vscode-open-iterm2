@@ -1,78 +1,79 @@
 {
-    "name": "vscode-open-iterm2",
-    "displayName": "Open iTerm2",
-    "description": "Open iTerm2 for vscode",
-    "version": "0.0.4",
-    "publisher": "mushan",
-    "author": {
-        "name": "mushan",
-        "email": "mushanmail@126.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mushanshitiancai/vscode-open-iterm2.git"
-    },
-    "homepage": "https://github.com/mushanshitiancai/vscode-open-iterm2/blob/master/README.md",
-    "bugs": {
-        "url": "https://github.com/mushanshitiancai/vscode-open-iterm2/issues"
-    },
-    "icon": "res/icon.png",
-    "keywords": [
-        "iTerm2",
-        "iterm2",
-        "terminal"
+  "name": "vscode-our-terminal",
+  "displayName": "Our Terminal",
+  "description": "Open external Terminal for vscode",
+  "version": "0.0.1",
+  "publisher": "hidu",
+  "author": {
+    "name": "hidu",
+    "email": "duv123+vs@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hidu/vscode-our-terminal.git"
+  },
+  "homepage": "https://github.com/hidu/vscode-our-terminal/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/hidu/vscode-our-terminal/issues"
+  },
+  "icon": "res/icon.png",
+  "keywords": [
+    "external terminal"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.our-terminal.open",
+        "title": "%command.openTerminal%"
+      }
     ],
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.openITerm2"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.openITerm2",
-                "title": "Open iTerm2 Here"
-            }
-        ],
-        "menus": {
-            "explorer/context": [
-                {
-                    "command": "extension.openITerm2"
-                }
-            ],
-            "editor/context": [
-                {
-                    "command": "extension.openITerm2"
-                }
-            ],
-            "editor/title": [
-                {
-                    "command": "extension.openITerm2"
-                }
-            ],
-            "editor/title/context": [
-                {
-                    "command": "extension.openITerm2"
-                }
-            ]
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.our-terminal.open",
+          "group": "navigation@1"
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+      ],
+      "editor/context": [
+        {
+          "command": "extension.our-terminal.open",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "extension.our-terminal.open"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "extension.our-terminal.open"
+        }
+      ]
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "format": "prettier --write .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.0.0",
+    "mocha": "^11.8.0",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
+  }
 }
