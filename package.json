@@ -1,7 +1,7 @@
 {
   "name": "vscode-our-terminal",
   "displayName": "Our Terminal",
-  "description": "Open external Terminal for vscode",
+  "description": "Open an external terminal from VS Code and change to the current directory.",
   "version": "0.0.1",
   "publisher": "hidu",
   "author": {
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/hidu/vscode-our-terminal.git"
   },
-  "homepage": "https://github.com/hidu/vscode-our-terminal/blob/master/README.md",
+  "homepage": "https://github.com/hidu/vscode-our-terminal",
   "bugs": {
     "url": "https://github.com/hidu/vscode-our-terminal/issues"
   },
@@ -23,7 +23,7 @@
   "engines": {
     "vscode": "^1.80.0"
   },
-  "categories": [
+ "categories": [
     "Other"
   ],
   "activationEvents": [],
@@ -33,6 +33,13 @@
       {
         "command": "extension.our-terminal.open",
         "title": "%command.openTerminal%"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.our-terminal.open",
+        "key": "alt+c",
+        "mac": "alt+c"
       }
     ],
     "menus": {
